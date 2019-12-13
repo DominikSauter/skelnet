@@ -166,7 +166,7 @@ class PSPU_SkelNet():
             out_pix = out_pix.astype(np.uint8)
             path = os.path.join(ROOT_PATH, files[i])
             print("Saving ... ", path)
-            imsave(path, out_pix, cmap='gray')
+            imsave(path, out_pix)#, cmap='gray')
 
 
 if __name__ == '__main__':
