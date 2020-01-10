@@ -31,7 +31,7 @@ from keras.optimizers import Adam
 from keras.layers import Input
 
 
-TEST_PATH = "dataset/point/test_img"
+TEST_PATH = "dataset/point/test_ml_comp_grey"
 ROOT_PATH = "dataset/point/root"
 EPOCHS = 200
 
