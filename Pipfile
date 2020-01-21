@@ -6,10 +6,10 @@ name = "pypi"
 [packages]
 numpy = "*"
 scikit-image = "*"
-tensorflow = "==1.8.0"
 keras = "==2.2.0"
 keras-contrib = {git = "https://www.github.com/keras-team/keras-contrib.git"}
 opencv-python = "*"
+tensorflow-gpu = "==1.8.0"
 
 [dev-packages]
 
