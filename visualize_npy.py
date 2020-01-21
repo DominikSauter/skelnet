@@ -3,8 +3,8 @@ import numpy as np
 
 
 def main():
-    in_pix = np.load('npy/in_pix.npy')
-    out_pix = np.load('npy/out_pix.npy')
+    in_pix = np.load('npy/in_train_ml_comp.npy')
+    out_pix = np.load('npy/out_train_ml_comp.npy')
 
     #in_img = Image.new('1', (255, 255))
     #out_img = Image.new('1', (255, 255))
@@ -17,8 +17,11 @@ def main():
     #in_img.save('npy/in_pix.png')
     #out_img.save('npy/out_pix.png')
 
-    Image.fromarray(in_pix[0, :, :, 0], 'L').show()
-    Image.fromarray(out_pix[0, :, :, 0], 'L').show()
+    print(in_pix.shape)
+    print(out_pix.shape)
+    example = 2
+    Image.fromarray(in_pix[example, :, :, 0], 'L').show()
+    Image.fromarray(out_pix[example, :, :, 0], 'L').show()
 
 
 if __name__ == '__main__':
