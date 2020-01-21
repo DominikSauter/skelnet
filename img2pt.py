@@ -21,7 +21,7 @@ import matplotlib.pyplot as plt
 from utils import read_points
 from utils import list_files, read_gray
 
-ROOT_PATH = "dataset/point/root"
+ROOT_PATH = "dataset/point/erosion"
 PRED_PATH = "dataset/point/pred"
 
 def img2pt():
@@ -36,7 +36,7 @@ def img2pt():
         filename = pix_file
         filename = filename.replace(".png", "")
         filename = filename.replace("full", "skel")
-        filename = filename.replace("root", "pred")
+        filename = filename.replace("erosion", "pred")
         print(filename)
         pix_data =  read_gray(pix_file)
         with open(filename, "w+") as  fh:
