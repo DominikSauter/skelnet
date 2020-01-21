@@ -36,7 +36,7 @@ def img2pt():
         filename = pix_file
         filename = filename.replace(".png", "")
         filename = filename.replace("full", "skel")
-        filename = filename.replace("erosion", "pred")
+        filename = filename.replace(os.path.basename(os.path.normpath(ROOT_PATH)), "pred")
         print(filename)
         pix_data =  read_gray(pix_file)
         with open(filename, "w+") as  fh:
