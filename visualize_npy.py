@@ -1,10 +1,15 @@
 from PIL import Image
 import numpy as np
+import click
 
 
-def main():
-    in_pix = np.load('npy/in_pts.npy')
-    out_pix = np.load('npy/out_pts.npy')
+@click.command()
+@click.option('--in_pts', default='npy/in_pts.npy')
+@click.option('--out_pts', default='npy/out_pts.npy')
+@click.option('--example', default=0)
+def main(in_pts, out_pts, example):
+    in_pix = np.load(in_pts)
+    out_pix = np.load(out_pts)
 
     #in_img = Image.new('1', (255, 255))
     #out_img = Image.new('1', (255, 255))
@@ -19,7 +24,6 @@ def main():
 
     print(in_pix.shape)
     print(out_pix.shape)
-    example = 2
     Image.fromarray(in_pix[example, :, :, 0], 'L').show()
     Image.fromarray(out_pix[example, :, :, 0], 'L').show()
 
