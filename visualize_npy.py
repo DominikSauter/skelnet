@@ -3,8 +3,8 @@ import numpy as np
 
 
 def main():
-    in_pix = np.load('npy/in_train_ml_comp.npy')
-    out_pix = np.load('npy/out_train_ml_comp.npy')
+    in_pix = np.load('npy/in_pts.npy')
+    out_pix = np.load('npy/out_pts.npy')
 
     #in_img = Image.new('1', (255, 255))
     #out_img = Image.new('1', (255, 255))

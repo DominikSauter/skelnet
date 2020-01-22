@@ -29,6 +29,7 @@ from utils import list_files, read_gray, augment
 from keras.callbacks import ModelCheckpoint, LearningRateScheduler
 from keras.optimizers import Adam
 from keras.layers import Input
+from keras import backend as K
 
 
 TEST_PATH = "dataset/point/test_ml_comp_grey"
@@ -46,6 +47,7 @@ class PSPU_SkelNet():
         self.model = None
         self.input_pix = None
         self.output_pix = None
+        K.set_image_data_format('channels_last')
 
 
     def load_train_data(self):
