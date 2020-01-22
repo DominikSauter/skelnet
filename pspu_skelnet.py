@@ -33,7 +33,7 @@ from keras.layers import Input
 
 TEST_PATH = "dataset/point/test_ml_comp_grey"
 ROOT_PATH = "dataset/point/root"
-EPOCHS = 1#200
+EPOCHS = 200
 
 
 class PSPU_SkelNet():
