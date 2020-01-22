@@ -48,5 +48,8 @@ def img2pt():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
+    parser.add_argument("--in_path",
+                        default=ROOT_PATH)
     args = parser.parse_args()
+    ROOT_PATH = args.in_path
     img2pt()

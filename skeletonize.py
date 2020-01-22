@@ -1,4 +1,4 @@
-from skimage.morphology import skeletonize
+from skimage.morphology import skeletonize, medial_axis, thin
 from skimage import data
 import matplotlib.pyplot as plt
 from skimage.util import invert
@@ -9,7 +9,10 @@ import numpy as np
 
 def main():
     in_images = "dataset/point/test_ml_comp_grey"
-    out_images = "dataset/point/root"
+    out_images_skel = "dataset/point/skeletonize"
+    out_images_skel_lee = "dataset/point/skeletonize_lee"
+    out_images_skel_medial_axis = "dataset/point/medial_axis_skeletons"
+    out_images_skel_thinned = "dataset/point/thinned_skeletons"
 
     for image in os.listdir(in_images):
         print(image)
@@ -18,8 +21,20 @@ def main():
         img_npy = (img_npy > .5).astype(float)
         # perform skeletonization
         skeleton = skeletonize(img_npy)
+        skeleton_lee = skeletonize(img_npy, method = 'lee')
+        # Compute the medial axis (skeleton) and the distance transform
+        skeleton_medial_axis, distance = medial_axis(img_npy, return_distance=True)
+        skeleton_thinned = thin(img_npy)
+
         skel_img = Image.fromarray(skeleton)
-        skel_img.save(os.path.join(out_images, image))
+        skel_img_lee = Image.fromarray(skeleton_lee)
+        skel_img_medial_axis = Image.fromarray(skeleton_medial_axis)
+        skel_img_thinned = Image.fromarray(skeleton_thinned)
+        
+        skel_img.save(os.path.join(out_images_skel, image))
+        skel_img_lee.save(os.path.join(out_images_skel_lee, image))
+        skel_img_medial_axis.save(os.path.join(out_images_skel_medial_axis, image))
+        skel_img_thinned.save(os.path.join(out_images_skel_thinned, image))
 
         # display results
         #fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(8, 4),
