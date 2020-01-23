@@ -32,7 +32,7 @@ from keras.layers import Input
 from keras import backend as K
 
 
-TEST_PATH = "dataset/point/test_ml_comp_grey"
+TEST_PATH = "dataset/point/test_ml_comp_grey_skeletonize"
 ROOT_PATH = "dataset/point/root"
 EPOCHS = 9999999
 
