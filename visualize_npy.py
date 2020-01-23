@@ -22,11 +22,16 @@ def main(in_pts, out_pts, example):
     #in_img.save('npy/in_pix.png')
     #out_img.save('npy/out_pix.png')
 
+    #for i in range(256):
+    #    for j in range(256):
+    #        if in_pix[example, i, j, 0] > 0:
+    #            print(in_pix[example, i, j, 0])
+    
     print(in_pix.shape)
     print(out_pix.shape)
     Image.fromarray(in_pix[example, :, :, 0], 'L').show()
     Image.fromarray(out_pix[example, :, :, 0], 'L').show()
-
+    
 
 if __name__ == '__main__':
     main()
