@@ -34,7 +34,7 @@ from keras import backend as K
 
 TEST_PATH = "dataset/point/test_ml_comp_grey"
 ROOT_PATH = "dataset/point/root"
-EPOCHS = 200
+EPOCHS = 9999999
 
 
 class PSPU_SkelNet():
@@ -106,10 +106,10 @@ class PSPU_SkelNet():
         if self.model is None:
             self.build_model()
         # prepare model model saving directory.
-        save_dir = os.path.join(os.getcwd(), 'weights')
+        save_dir = '/data/secure/skelnet_weights'#os.path.join(os.getcwd(), 'weights')
         if not os.path.isdir(save_dir):
             os.makedirs(save_dir)
-        weights_name = 'pspu_skelnet.h5' 
+        weights_name = 'pspu_skelnet_epoch_{epoch:02d}.h5' 
         filepath = os.path.join(save_dir, weights_name)
 
         # prepare callbacks for model saving and for learning rate adjustment.
