@@ -2,3 +2,6 @@ dataset
 npy
 weights
 submission
+selective_ensemble/labels_details
+selective_ensemble/selected_images
+selective_ensemble/selected_images_details
