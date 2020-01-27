@@ -18,7 +18,7 @@ def main():
     submission = {}
     test_counter = 0
     single_adj_lists = []
-    for point_cloud in os.listdir(in_point_clouds_path):
+    for point_cloud in sorted(os.listdir(in_point_clouds_path)):
         print(point_cloud)
         with open(os.path.join(in_point_clouds_path, point_cloud)) as cloud:
             reader = csv.reader(cloud, delimiter=' ')
@@ -31,20 +31,27 @@ def main():
                     y = int(row[1])
                     points.append(np.array([x, y]))
                     points_list.append((x, y))
-            
+
+            print(len(points)/(256*256))
             # if image does not contain points: add some default points for default graph
-            if not points:
-                print(point_cloud + ' does not contain points! Some default points are used.')
+            if not points or len(points)/(256*256) > 0.05:
+                print(len(points)/(256*256))
+                points = []
+                points_list = []
                 points.append(np.array([0, 0]))
                 points.append(np.array([255, 255]))
                 points.append(np.array([0, 255]))
                 points.append(np.array([255, 0]))
                 points.append(np.array([127, 127]))
+                #points.append(np.array([126, 126]))
+                #points.append(np.array([128, 128]))
                 points_list.append((0, 0))
                 points_list.append((255, 255))
                 points_list.append((0, 255))
                 points_list.append((255, 0))
                 points_list.append((127, 127))
+                #points_list.append((126, 126))
+                #points_list.append((128, 128))
 
             # preparation Minimum Spanning Tree
             points_length = len(points)
@@ -74,7 +81,6 @@ def main():
                                 }
             submission[point_cloud[:-3]] = single_adj_list
             single_adj_lists.append((single_adj_list, point_cloud))
-    
 
     # delete out dirs and recreate    
     shutil.rmtree(out_submission_path, ignore_errors=True)

@@ -52,7 +52,7 @@ def main():
     for max_score in max_scores:
         src_path = os.path.join('dataset/point/', max_score[2], max_score[1] + '_ip.png')
         dst_selected_path = os.path.join(out_test_images_path, 'selected_images')
-        dst_selected_details_path = os.path.join(out_test_images_path, 'selected_images_details', max_score[1] + '_score:' + str(round(max_score[0], 3)) + '_' + max_score[2] + '.png')
+        dst_selected_details_path = os.path.join(out_test_images_path, 'selected_images_details', str(round(max_score[0], 3)) + '_' + max_score[1]  + '_' + max_score[2] + '.png')
         
         shutil.copy(src_path, dst_selected_path)
         shutil.copy(src_path, dst_selected_details_path)
