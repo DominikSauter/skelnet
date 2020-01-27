@@ -41,21 +41,28 @@ def main():
     # delete out dirs and recreate    
     selected_images_path = os.path.join(out_test_images_path, 'selected_images')
     selected_images_details_path = os.path.join(out_test_images_path, 'selected_images_details')
+    labels_details_images_path = os.path.join(out_test_images_path, 'labels_details')
     shutil.rmtree(selected_images_path, ignore_errors=True)
     shutil.rmtree(selected_images_details_path, ignore_errors=True)
+    shutil.rmtree(labels_details_images_path, ignore_errors=True)
     if not os.path.isdir(selected_images_path):
         os.makedirs(selected_images_path)
     if not os.path.isdir(selected_images_details_path):
         os.makedirs(selected_images_details_path)
-    
+    if not os.path.isdir(labels_details_images_path):
+        os.makedirs(labels_details_images_path)
+
     
     for max_score in max_scores:
         src_path = os.path.join('dataset/point/', max_score[2], max_score[1] + '_ip.png')
+        src_labels_path = os.path.join('dataset/point/test_ml_comp_labels', max_score[1] + '_ip.png')
         dst_selected_path = os.path.join(out_test_images_path, 'selected_images')
         dst_selected_details_path = os.path.join(out_test_images_path, 'selected_images_details', str(round(max_score[0], 3)) + '_' + max_score[1]  + '_' + max_score[2] + '.png')
-        
+        dst_labels_details_path = os.path.join(out_test_images_path, 'labels_details', str(round(max_score[0], 3)) + '_' + max_score[1]  + '_' + max_score[2] + '.png')
+
         shutil.copy(src_path, dst_selected_path)
         shutil.copy(src_path, dst_selected_details_path)
+        shutil.copy(src_labels_path, dst_labels_details_path)
 
 
 if __name__ == '__main__':

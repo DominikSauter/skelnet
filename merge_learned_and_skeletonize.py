@@ -5,7 +5,7 @@ import numpy as np
 
 
 def main():
-    in_learned_skeletons_path = "dataset/point/skelnet_pretrained"
+    in_learned_skeletons_path = "dataset/point/skelnet_black_skel_test_black_epoch252"
     in_learned_black_skeletons_test_normal_path = "dataset/point/skelnet_black_skel_test_normal_epoch252"
     in_skeletonize_path = "dataset/point/skeletonize"
     in_skeletonize_lee_path = "dataset/point/skeletonize_lee"
@@ -41,9 +41,9 @@ def main():
                         l_img_immat[(i, j)] +
                         lbn_img_immat[(i, j)] +
                         s_img_immat[(i, j)] +
-                        sl_img_immat[(i, j)] +
-                        m_img_immat[(i, j)] +
-                        t_img_immat[(i, j)]
+                        sl_img_immat[(i, j)]
+                        #m_img_immat[(i, j)] +
+                        #t_img_immat[(i, j)]
                         )
         merged_img.save(os.path.join(out_merged_path, learned_img))
 
