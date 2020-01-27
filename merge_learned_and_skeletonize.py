@@ -1,16 +1,22 @@
 from PIL import Image
 import os
+import shutil
 import numpy as np
 
 
 def main():
     in_learned_skeletons_path = "dataset/point/skelnet_pretrained"
-    in_learned_black_skeletons_test_normal_path = "dataset/point/skelnet_black_skel_test_normal_epoch200"
+    in_learned_black_skeletons_test_normal_path = "dataset/point/skelnet_black_skel_test_normal_epoch252"
     in_skeletonize_path = "dataset/point/skeletonize"
     in_skeletonize_lee_path = "dataset/point/skeletonize_lee"
     in_medial_axis_skeletons_path = "dataset/point/medial_axis_skeletons"
     in_thinned_skeletons_path = "dataset/point/thinned_skeletons"
     out_merged_path = "dataset/point/merged"
+
+    # delete out dirs and recreate    
+    shutil.rmtree(out_merged_path, ignore_errors=True)
+    if not os.path.isdir(out_merged_path):
+        os.makedirs(out_merged_path)
 
     for learned_img, learned_black_skel_test_normal, skeletonize_img, skeletonize_lee_img, medial_axis_skeleton_img, thinned_skeleton_img in zip(os.listdir(in_learned_skeletons_path), os.listdir(in_learned_black_skeletons_test_normal_path), os.listdir(in_skeletonize_path), os.listdir(in_skeletonize_lee_path), os.listdir(in_medial_axis_skeletons_path), os.listdir(in_thinned_skeletons_path)):
         print(learned_img)
