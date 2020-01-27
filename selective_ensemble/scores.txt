@@ -25,11 +25,7 @@ merged_skeletonize_skeletonizelee_thinned 85.513
 merged_medialaxis_thinned 81.435
 merged_skeletonize_skeletonizelee_medialaxis_thinned 81.697
 merged_skelnetblacktestnormalepoch252_skelnetblacktestblackepoch252_skeletonize_skeletonizelee 63.346
-
-
-
-
-merged_skeletonize_skeletonizelee (ds)
+merged_skeletonize_skeletonizelee 85.832
 
 
 skelnetblacktestblackepoch252_skeletonize_skeletonizelee
