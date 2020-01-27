@@ -1,4 +1,5 @@
 import os
+import shutil
 import csv
 import random
 from scipy.sparse import csr_matrix
@@ -10,6 +11,7 @@ import json
 
 def main():
     in_point_clouds_path = "dataset/point/pred"
+    out_submission_path = "submission"
     skip_percent_of_points = 0
 
     # for every point cloud: calculate Minimum Spanning Tree
@@ -24,12 +26,26 @@ def main():
             points_list = []
             for row in reader:
                 # skip some % of points
-                if random.randrange(0,100,1) > skip_percent_of_points:
+                if random.randrange(0,100,1) >= skip_percent_of_points:
                     x = int(row[0])
                     y = int(row[1])
                     points.append(np.array([x, y]))
                     points_list.append((x, y))
             
+            # if image does not contain points: add some default points for default graph
+            if not points:
+                print(point_cloud + ' does not contain points! Some default points are used.')
+                points.append(np.array([0, 0]))
+                points.append(np.array([255, 255]))
+                points.append(np.array([0, 255]))
+                points.append(np.array([255, 0]))
+                points.append(np.array([127, 127]))
+                points_list.append((0, 0))
+                points_list.append((255, 255))
+                points_list.append((0, 255))
+                points_list.append((255, 0))
+                points_list.append((127, 127))
+
             # preparation Minimum Spanning Tree
             points_length = len(points)
             graph = np.zeros((points_length, points_length))
@@ -58,7 +74,14 @@ def main():
                                 }
             submission[point_cloud[:-3]] = single_adj_list
             single_adj_lists.append((single_adj_list, point_cloud))
-            
+    
+
+    # delete out dirs and recreate    
+    shutil.rmtree(out_submission_path, ignore_errors=True)
+    single_adj_lists_path = os.path.join(out_submission_path, 'single_adj_lists')
+    if not os.path.isdir(single_adj_lists_path):
+        os.makedirs(single_adj_lists_path)
+
     # write to file
     with open("submission/submission.pkl", "wb") as f:
         pickle.dump(submission, f)
@@ -75,3 +98,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

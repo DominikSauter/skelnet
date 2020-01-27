@@ -11,6 +11,7 @@ import argparse
 import sys
 
 import os
+import shutil
 import datetime
 import scipy.misc
 import json
@@ -25,6 +26,8 @@ ROOT_PATH = "dataset/point/erosion"
 PRED_PATH = "dataset/point/pred"
 
 def img2pt():
+    shutil.rmtree(PRED_PATH, ignore_errors=True)
+
     path = ROOT_PATH
     if not os.path.isdir(PRED_PATH):
         os.makedirs(PRED_PATH)
