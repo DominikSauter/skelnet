@@ -1,6 +1,7 @@
 import os
 import shutil
 import json
+import pprint
 
 
 def main():
@@ -25,6 +26,7 @@ def main():
             scores_dicts.append((scores, scores_file))
     
     max_scores = []
+    used_preds = {}
     for key in scores_dicts[0][0].keys():
         max_score = (-1., None, None)
         for scores_dict in scores_dicts:
@@ -32,8 +34,13 @@ def main():
             if score > max_score[0]:
                 max_score = (score, key, scores_dict[1][:-5])
         max_scores.append(max_score)    
-        print('max_score: ' + str(max_score))
+        if max_score[2] in used_preds.keys():
+            used_preds[max_score[2]] = used_preds[max_score[2]] + 1
+        else:
+            used_preds[max_score[2]] = 1
+        #print('max_score: ' + str(max_score))
    
+    pprint.pprint(used_preds)
     avg_score = sum(i for i, _, _ in max_scores) / len(max_scores)
     print('avg_score: ' + str(avg_score))
     

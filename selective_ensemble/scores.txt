@@ -1,0 +1,45 @@
+# unused
+merged_skelnetpre_skelnetblacktestnormal_skeletonize_skeletonizelee 86.842
+
+
+
+# USED
+skeletonize 86.404
+skeletonize_lee 84.037
+medial_axis_skeletons 81.707
+thinned_skeletons 85.701
+merged_skelnetblacktestnormal_skeletonize_skeletonizelee 86.628
+skelnet_black_skel_test_normal_epoch200 83.398
+== ab hier evtl. mit 0.05 (nochmal neu mit 0.1)
+skelnet_black_skel_test_black_epoch200 48.891
+skelnet_weighted_ex_test_normal_epoch29 Failed
+skelnet_black_skel_test_normal_epoch252 52.747
+skelnet_black_skel_test_black_epoch252 56.157
+merged_skelnetblacktestnormalepoch252_skeletonize_skeletonizelee 86.525
+
+
+== ab hier mit 0.1
+merged_skelnetblacktestnormalepoch252_skeletonize_skeletonizelee_medialaxis_thinned 81.870
+merged_skeletonize_skeletonizelee_medialaxis 81.247
+merged_skeletonize_skeletonizelee_thinned 85.513
+merged_medialaxis_thinned 81.435
+merged_skeletonize_skeletonizelee_medialaxis_thinned 81.697
+merged_skelnetblacktestnormalepoch252_skelnetblacktestblackepoch252_skeletonize_skeletonizelee 63.346
+
+
+
+
+merged_skeletonize_skeletonizelee (ds)
+
+
+skelnetblacktestblackepoch252_skeletonize_skeletonizelee
+
+
+
+# yet to do
+skelnetblacktestblackepoch200_skeletonize_skeletonizelee
+skelnet_black_skel_test_black_epoch252_erosion
+skelnetblacktestblackepoch252erosion_skeletonize_skeletonizelee
+
+
+
