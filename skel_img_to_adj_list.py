@@ -7,6 +7,7 @@ from scipy.sparse.csgraph import minimum_spanning_tree
 import numpy as np
 import pickle
 import json
+from PIL import Image
 
 
 def main():
@@ -38,20 +39,18 @@ def main():
                 print(len(points)/(256*256))
                 points = []
                 points_list = []
-                points.append(np.array([0, 0]))
-                points.append(np.array([255, 255]))
-                points.append(np.array([0, 255]))
-                points.append(np.array([255, 0]))
-                points.append(np.array([127, 127]))
-                #points.append(np.array([126, 126]))
-                #points.append(np.array([128, 128]))
-                points_list.append((0, 0))
-                points_list.append((255, 255))
-                points_list.append((0, 255))
-                points_list.append((255, 0))
-                points_list.append((127, 127))
-                #points_list.append((126, 126))
-                #points_list.append((128, 128))
+                for i in range(0, 256, 1):
+                    points.append(np.array([127, i]))
+                    points_list.append((127, i))
+                    points.append(np.array([i, 127]))
+                    points_list.append((i, 127))
+
+                #points_img = Image.new('L', (256, 256))
+                #points_immat = points_img.load()
+                #for point in points_list:
+                #    points_immat[int(point[0]), int(point[1])] = 255
+                #Image.fromarray(np.array(points_img), 'L').show()
+                #break
 
             # preparation Minimum Spanning Tree
             points_length = len(points)
