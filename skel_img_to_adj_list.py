@@ -7,6 +7,7 @@ from scipy.sparse.csgraph import minimum_spanning_tree
 import numpy as np
 import pickle
 import json
+from PIL import Image
 
 
 def main():
@@ -18,7 +19,7 @@ def main():
     submission = {}
     test_counter = 0
     single_adj_lists = []
-    for point_cloud in os.listdir(in_point_clouds_path):
+    for point_cloud in sorted(os.listdir(in_point_clouds_path)):
         print(point_cloud)
         with open(os.path.join(in_point_clouds_path, point_cloud)) as cloud:
             reader = csv.reader(cloud, delimiter=' ')
@@ -31,20 +32,25 @@ def main():
                     y = int(row[1])
                     points.append(np.array([x, y]))
                     points_list.append((x, y))
-            
+
+            print(len(points)/(256*256))
             # if image does not contain points: add some default points for default graph
-            if not points:
-                print(point_cloud + ' does not contain points! Some default points are used.')
-                points.append(np.array([0, 0]))
-                points.append(np.array([255, 255]))
-                points.append(np.array([0, 255]))
-                points.append(np.array([255, 0]))
-                points.append(np.array([127, 127]))
-                points_list.append((0, 0))
-                points_list.append((255, 255))
-                points_list.append((0, 255))
-                points_list.append((255, 0))
-                points_list.append((127, 127))
+            if not points or len(points)/(256*256) > 0.05:
+                print(len(points)/(256*256))
+                points = []
+                points_list = []
+                for i in range(0, 256, 1):
+                    points.append(np.array([127, i]))
+                    points_list.append((127, i))
+                    points.append(np.array([i, 127]))
+                    points_list.append((i, 127))
+
+                #points_img = Image.new('L', (256, 256))
+                #points_immat = points_img.load()
+                #for point in points_list:
+                #    points_immat[int(point[0]), int(point[1])] = 255
+                #Image.fromarray(np.array(points_img), 'L').show()
+                #break
 
             # preparation Minimum Spanning Tree
             points_length = len(points)
@@ -74,7 +80,6 @@ def main():
                                 }
             submission[point_cloud[:-3]] = single_adj_list
             single_adj_lists.append((single_adj_list, point_cloud))
-    
 
     # delete out dirs and recreate    
     shutil.rmtree(out_submission_path, ignore_errors=True)
