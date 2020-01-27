@@ -15,8 +15,8 @@ def main():
     #skelnet_pretrained_erosion
     #merged_skelnetpre_skeletonize_skeletonizelee
     #skelnetblacktestblack
-    in_test_scores_path = "dataset/point/selective_ensemble/test_scores/"
-    out_test_images_path = "dataset/point/selective_ensemble/"
+    in_test_scores_path = "selective_ensemble/test_scores/"
+    out_test_images_path = "selective_ensemble/"
 
     scores_dicts = []
     for scores_file in os.listdir(in_test_scores_path):
