@@ -37,7 +37,14 @@ def main():
         merged_img_immat = merged_img.load()
         for i in range (256):
             for j in range(256):
-                merged_img_immat[(i, j)] = lbn_img_immat[(i, j)] + s_img_immat[(i, j)] + sl_img_immat[(i, j)]
+                merged_img_immat[(i, j)] = (
+                        l_img_immat[(i, j)] +
+                        lbn_img_immat[(i, j)] +
+                        s_img_immat[(i, j)] +
+                        sl_img_immat[(i, j)] +
+                        m_img_immat[(i, j)] +
+                        t_img_immat[(i, j)]
+                        )
         merged_img.save(os.path.join(out_merged_path, learned_img))
 
         #Image.fromarray(np.array(merged_img), 'L').show()
