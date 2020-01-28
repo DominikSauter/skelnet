@@ -1,12 +1,18 @@
 import cv2
 import numpy as np
 import os
+import shutil
 
 
 def main():
-    in_images_path = "dataset/point/merged"
+    in_images_path = "dataset/point/skelnet_black_skel_test_black_epoch252"
     out_images_path = "dataset/point/erosion"
     
+    # delete out dirs and recreate    
+    shutil.rmtree(out_images_path, ignore_errors=True)
+    if not os.path.isdir(out_images_path):
+        os.makedirs(out_images_path)
+
     for image_file in os.listdir(in_images_path):
         print(image_file)
         img = cv2.imread(os.path.join(in_images_path, image_file),cv2.IMREAD_GRAYSCALE)
