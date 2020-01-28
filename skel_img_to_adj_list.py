@@ -39,11 +39,16 @@ def main():
                 print(len(points)/(256*256))
                 points = []
                 points_list = []
-                for i in range(0, 256, 1):
+                for i in range(64, 192, 2):
                     points.append(np.array([127, i]))
                     points_list.append((127, i))
                     points.append(np.array([i, 127]))
                     points_list.append((i, 127))
+
+                    points.append(np.array([i, i]))
+                    points_list.append((i, i))
+                    points.append(np.array([i, -i+256]))
+                    points_list.append((i, -i+256))
 
                 #points_img = Image.new('L', (256, 256))
                 #points_immat = points_img.load()
