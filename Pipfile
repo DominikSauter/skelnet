@@ -10,7 +10,8 @@ keras = "==2.2.0"
 keras-contrib = {git = "https://www.github.com/keras-team/keras-contrib.git"}
 opencv-python = "*"
 click = "*"
-tensorflow-gpu = "==1.8.0"
+tensorflow = "==1.8.0"
+scipy = "*"
 
 [dev-packages]
 
