@@ -8,15 +8,14 @@ skeletonize 86.404
 skeletonize_lee 84.037
 medial_axis_skeletons 81.707
 thinned_skeletons 85.701
-merged_skelnetblacktestnormal_skeletonize_skeletonizelee 86.628
+merged_skelnetblacktestnormalepoch200_skeletonize_skeletonizelee 86.628
 skelnet_black_skel_test_normal_epoch200 83.398
+
 == ab hier evtl. mit 0.05 (nochmal neu mit 0.1)
-skelnet_black_skel_test_black_epoch200 48.891
 skelnet_weighted_ex_test_normal_epoch29 Failed
 skelnet_black_skel_test_normal_epoch252 52.747
 skelnet_black_skel_test_black_epoch252 56.157
 merged_skelnetblacktestnormalepoch252_skeletonize_skeletonizelee 86.525
-
 
 == ab hier mit 0.1
 merged_skelnetblacktestnormalepoch252_skeletonize_skeletonizelee_medialaxis_thinned 81.870
@@ -28,21 +27,28 @@ merged_skelnetblacktestnormalepoch252_skelnetblacktestblackepoch252_skeletonize_
 merged_skeletonize_skeletonizelee 85.832
 merged_skelnetblacktestblackepoch252_skeletonize_skeletonizelee 63.915
 merged_skelnetblacktestblackepoch200_skeletonize_skeletonizelee 62.456
+merged_skelnetblacktestblackepoch252erosion_skeletonize_skeletonizelee 72.368
+skelnet_black_skel_test_black_epoch252_erosion Failed
+skelnet_weighted_ex_test_normal_epoch67 82.288
+skelnet_weighted_ex_test_normal_epoch67_erosion 74.015
+merged_skelnetweightedextestnormalepoch67_skeletonize_skeletonizelee 79.254
+merged_skelnetweightedextestnormalepoch67_skelnetblacktestnormalepoch313 79.397
+merged_skelnetweightedextestnormalepoch67_skelnetblacktestnormalepoch313_erosion 78.178
+skelnet_black_skel_test_black_epoch200 61.999 (1043 sollte besser sein!?)
+opencv_thinned_theailearner 80.437
+opencv_thinned 79.878
+opencv_thinned_jsheedy 76.471
+skelnet_black_skel_test_normal_epoch150 83.879
 
 
-skelnet_black_skel_test_black_epoch252_erosion
+skelnet_black_skel_test_black_epoch150 (ds sk)
 
 
 
 # yet to do
-skelnetblacktestblackepoch252erosion_skeletonize_skeletonizelee
-
 #REDO 0.05er
 
-
-
-
-
+opencv_thinned --> wvtl. irgendwie erosion (evtl. code ändern)
 
 
 
