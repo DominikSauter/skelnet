@@ -30,9 +30,11 @@ merged_skelnetblacktestblackepoch252_skeletonize_skeletonizelee 63.915
 merged_skelnetblacktestblackepoch200_skeletonize_skeletonizelee 62.456
 
 
+skelnet_black_skel_test_black_epoch252_erosion
+
+
 
 # yet to do
-skelnet_black_skel_test_black_epoch252_erosion
 skelnetblacktestblackepoch252erosion_skeletonize_skeletonizelee
 
 #REDO 0.05er

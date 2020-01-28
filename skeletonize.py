@@ -3,16 +3,26 @@ from skimage import data
 import matplotlib.pyplot as plt
 from skimage.util import invert
 import os
+import shutil
 from PIL import Image
 import numpy as np
 
 
 def main():
-    in_images = "dataset/point/test_ml_comp_grey"
-    out_images_skel = "dataset/point/skeletonize"
-    out_images_skel_lee = "dataset/point/skeletonize_lee"
-    out_images_skel_medial_axis = "dataset/point/medial_axis_skeletons"
-    out_images_skel_thinned = "dataset/point/thinned_skeletons"
+    in_images = "dataset/point/test_ml_comp_grey_framed"
+    out_images_skel = "dataset/point/skeletonize_framed"
+    out_images_skel_lee = "dataset/point/skeletonize_lee_framed"
+    out_images_skel_medial_axis = "dataset/point/medial_axis_skeletons_framed"
+    out_images_skel_thinned = "dataset/point/thinned_skeletons_framed"
+
+    shutil.rmtree(out_images_skel, ignore_errors=True)
+    os.makedirs(out_images_skel, exist_ok=True)
+    shutil.rmtree(out_images_skel_lee, ignore_errors=True)
+    os.makedirs(out_images_skel_lee, exist_ok=True)
+    shutil.rmtree(out_images_skel_medial_axis, ignore_errors=True)
+    os.makedirs(out_images_skel_medial_axis, exist_ok=True)
+    shutil.rmtree(out_images_skel_thinned, ignore_errors=True)
+    os.makedirs(out_images_skel_thinned, exist_ok=True)
 
     for image in os.listdir(in_images):
         print(image)
