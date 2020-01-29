@@ -5,16 +5,6 @@ import pprint
 
 
 def main():
-    # scores to add
-    #skeletonize
-    #skeletonize_lee
-    #medial_axis
-    #thinned
-    #skelnetblacktestnormal
-    #skelnet_pretrained
-    #skelnet_pretrained_erosion
-    #merged_skelnetpre_skeletonize_skeletonizelee
-    #skelnetblacktestblack
     in_test_scores_path = "selective_ensemble/test_scores/"
     out_test_images_path = "selective_ensemble/"
 
@@ -26,11 +16,18 @@ def main():
             scores_dicts.append((scores, scores_file))
     
     max_scores = []
+    scores_gathered = {}
     used_preds = {}
     for key in scores_dicts[0][0].keys():
-        max_score = (-1., None, None)
+        max_score = (-1., "NoneKey", "NoneName")
         for scores_dict in scores_dicts:
             score = scores_dict[0][key]
+
+            if key in scores_gathered.keys():
+                scores_gathered[key].append((score, key, scores_dict[1][:-5]))
+            else:
+                scores_gathered[key] = [(score, key, scores_dict[1][:-5])]
+
             if score > max_score[0]:
                 max_score = (score, key, scores_dict[1][:-5])
         max_scores.append(max_score)    
@@ -39,7 +36,22 @@ def main():
         else:
             used_preds[max_score[2]] = 1
         #print('max_score: ' + str(max_score))
-   
+
+
+    scores_gathered_list = []
+    for key in scores_gathered.keys():
+        # scores_gathered[key] = sorted(scores_gathered[key], reverse = True)
+        scores_gathered_list.append(sorted(scores_gathered[key], reverse = True)[:3])
+    scores_gathered_list = sorted(scores_gathered_list, reverse = True)
+    for item in scores_gathered_list:
+        out_string = '[' + str(item[0][1]) + '] '
+        for item_tuple in item:
+            out_string += '(' + str(round(item_tuple[0], 3)) + ', ' + str(item_tuple[2])+ '), '
+        print(out_string)
+
+
+    #for max_score in sorted(max_scores):
+    #    print(max_score)
     pprint.pprint(used_preds)
     avg_score = sum(i for i, _, _ in max_scores) / len(max_scores)
     print('avg_score: ' + str(avg_score))

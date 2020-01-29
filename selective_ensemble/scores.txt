@@ -1,6 +1,8 @@
-# unused
+# PRETRAINED / UNUSED
 merged_skelnetpre_skelnetblacktestnormal_skeletonize_skeletonizelee 86.842
-
+skelnet_pretrained_erosion 88.873
+skelnet_pretrained 87.664
+merged_skelnetpre_skeletonize_skeletonizelee 86.966
 
 
 # USED
@@ -39,9 +41,25 @@ opencv_thinned_theailearner 80.437
 opencv_thinned 79.878
 opencv_thinned_jsheedy 76.471
 skelnet_black_skel_test_normal_epoch150 83.879
+skelnet_black_skel_test_black_epoch150 72.087
+skelnet_black_skel_test_normal_epoch366 84.285
+skelnet_black_skel_test_black_epoch366 61.439
+skeletonize_flux0.1 80.463
+skeletonize_flux 84.735
+skeletonize_flux0.2 85.667
+skeletonize_flux0.25 84.543
+skeletonize_flux0.3 80.482
+skeletonize_flux0.35 76.696
+skeletonize_flux0.4 71.903
+skeletonize_flux0.45 64.393
+skeletonize_flux0.5 57.819
+skeletonize_flux0.55 50.111
+skelnet_weighted_ex_test_normal_epoch102_erosion 74.927
+skelnet_weighted_ex_test_normal_epoch102 79.704
+merged_skelnetblacktestnormalepoch366_skeletonizeflux0.2 86.315
+merged_skelnetweightedextestnormalepoch67_skeletonizeflux0.2 80.701
 
 
-skelnet_black_skel_test_black_epoch150 (ds sk)
 
 
 
@@ -50,9 +68,22 @@ skelnet_black_skel_test_black_epoch150 (ds sk)
 
 opencv_thinned --> wvtl. irgendwie erosion (evtl. code ändern)
 
+frühere skelnets epochs hinzunehmen
+
+epoch 366 merged skelnet
 
 
-# scores to add
-skelnet_pretrained
-skelnet_pretrained_erosion
-merged_skelnetpre_skeletonize_skeletonizelee
+
+94.802_1043_skelnet_black_skel_test_normal_epoch150.png
+    "1043": 94.80210639590771,
+94.288_1043_skelnet_black_skel_test_normal_epoch366.png
+--> changed both to 0 (durch schwarzes bild label 1043 genommen vorher)
+
+
+skimage.thin statt erosion
+verbinden von elementen durch ndim.label und dann kurze elemente rauswerfen
+
+
+
+
+
