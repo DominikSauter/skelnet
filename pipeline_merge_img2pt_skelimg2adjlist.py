@@ -8,11 +8,11 @@ from PIL import Image
 
 @click.command()
 @click.option('--preds', default="")
-def main(preds):
-    dataset_point_path = 'dataset/point/'
+@click.option('--ds_path', default="dataset/point/")
+def main(preds, ds_path):
     splitted_paths = preds.split(" ")
     for split_path in splitted_paths:
-        assert os.path.isdir(os.path.join(dataset_point_path, split_path))
+        assert os.path.isdir(os.path.join(ds_path, split_path))
 
     print("Starting pipeline step 1/3 (possible merging)..")
     # if multiple prediction sets shall be merged
@@ -22,7 +22,7 @@ def main(preds):
         out_merged_path = "merged"
         for p in splitted_paths:
             out_merged_path += '_' + p.replace("_","")
-        merged_full_path = os.path.join(dataset_point_path, out_merged_path)
+        merged_full_path = os.path.join(ds_path, out_merged_path)
         shutil.rmtree(merged_full_path, ignore_errors=True)
         if not os.path.isdir(merged_full_path):
             os.makedirs(merged_full_path)
@@ -31,7 +31,7 @@ def main(preds):
         # load and gather all images to be merged
         images_list = []
         for path in splitted_paths:
-            pred_dir_path = os.path.join(dataset_point_path, path)
+            pred_dir_path = os.path.join(ds_path, path)
             pred_images = []
             for img_path in sorted(os.listdir(pred_dir_path)):
                 pred_images.append((img_path, Image.open(os.path.join(pred_dir_path, img_path)), 'r'))
@@ -54,7 +54,7 @@ def main(preds):
     elif len(splitted_paths) == 1 and not splitted_paths[0] == "":
         print("NO MERGING, USING: " + str(splitted_paths))
         path = preds
-        in_path_img2pt = os.path.join(dataset_point_path, path)
+        in_path_img2pt = os.path.join(ds_path, path)
     else:
         raise ValueError("No predictions given!")
     print("Pipeline step 1/3 (possible merging) done.")
