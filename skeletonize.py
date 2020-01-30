@@ -9,11 +9,11 @@ import numpy as np
 
 
 def main():
-    in_images = "dataset/point/test_ml_comp_grey_framed"
-    out_images_skel = "dataset/point/skeletonize_framed"
-    out_images_skel_lee = "dataset/point/skeletonize_lee_framed"
-    out_images_skel_medial_axis = "dataset/point/medial_axis_skeletons_framed"
-    out_images_skel_thinned = "dataset/point/thinned_skeletons_framed"
+    in_images = "dataset/point/test_ml_comp_grey_upsampled0.5_thres"
+    out_images_skel = "dataset/point/skeletonize_upsampled0.5_thres"
+    out_images_skel_lee = "dataset/point/skeletonize_lee_upsampled0.5_thres"
+    out_images_skel_medial_axis = "dataset/point/medial_axis_skeletons_upsampled0.5_thres"
+    out_images_skel_thinned = "dataset/point/thinned_skeletons_upsampled0.5_thres"
 
     shutil.rmtree(out_images_skel, ignore_errors=True)
     os.makedirs(out_images_skel, exist_ok=True)

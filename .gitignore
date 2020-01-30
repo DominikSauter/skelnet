@@ -1,8 +1,11 @@
 .idea
+__pycache__
 dataset/point/pred
 dataset/point/merged
 dataset/point/root
 dataset/point/erosion
+dataset/point/test_ml_comp_grey_upsampled
+dataset/point/test_ml_comp_grey_upsampled_downsampled/
 npy
 weights
 submission

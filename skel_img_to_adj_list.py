@@ -132,10 +132,10 @@ def main():
     for adj_list in single_adj_lists:
         with open(os.path.join("submission/single_adj_lists", adj_list[1] + ".pkl"), "wb") as f:
             pickle.dump(adj_list[0], f)
-    # read again and print
-    with open("submission/submission.pkl", "rb") as f:
-        loaded = pickle.load(f)
-        print(loaded)        
+    ## read again and print
+    #with open("submission/submission.pkl", "rb") as f:
+    #    loaded = pickle.load(f)
+    #    print(loaded)        
 
 
 if __name__ == '__main__':

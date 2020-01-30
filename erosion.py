@@ -5,7 +5,7 @@ import shutil
 
 
 def main():
-    in_images_path = "dataset/point/skelnet_black_skel_test_black_epoch252"
+    in_images_path = "dataset/point/merged_skelnetweightedextestnormalepoch67_skelnetblacktestnormalepoch313"
     out_images_path = "dataset/point/erosion"
     
     # delete out dirs and recreate    

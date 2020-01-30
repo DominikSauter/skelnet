@@ -54,10 +54,17 @@ skeletonize_flux0.4 71.903
 skeletonize_flux0.45 64.393
 skeletonize_flux0.5 57.819
 skeletonize_flux0.55 50.111
-skelnet_weighted_ex_test_normal_epoch102_erosion 74.927
+
 skelnet_weighted_ex_test_normal_epoch102 79.704
-merged_skelnetblacktestnormalepoch366_skeletonizeflux0.2 86.315
+skelnet_weighted_ex_test_normal_epoch102_erosion 74.927
 merged_skelnetweightedextestnormalepoch67_skeletonizeflux0.2 80.701
+merged_skelnetweightedextestnormalepoch102_skeletonizeflux0.2 80.111
+
+merged_skelnetblacktestnormalepoch366_skeletonizeflux0.2 86.315
+
+merged_skeletonize_skeletonizeflux0.2 86.043
+merged_thinned_skeletonizeflux0.2 86.300
+
 
 
 
@@ -71,7 +78,10 @@ opencv_thinned --> wvtl. irgendwie erosion (evtl. code ändern)
 frühere skelnets epochs hinzunehmen
 
 epoch 366 merged skelnet
+neuere epochs weighted ex + black skelnet
 
+thinned und skeletonize_flux kombinieren
+und skeletonize
 
 
 94.802_1043_skelnet_black_skel_test_normal_epoch150.png
@@ -81,7 +91,7 @@ epoch 366 merged skelnet
 
 
 skimage.thin statt erosion
-verbinden von elementen durch ndim.label und dann kurze elemente rauswerfen
+verbinden von elementen durch scipy.ndimage.label und dann kurze elemente rauswerfen
 
 
 
