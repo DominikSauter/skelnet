@@ -89,10 +89,11 @@ merged_skeletonize_skeletonizeflux0.3 87.348
 
 
 
+
 skelnet_black_skel_test_normal_epoch498_S500 88.258
 skelnet_black_skel_test_black_epoch498_S500 76.273
 skelnet_weighted_ex_test_normal_epoch173_thin_S500 91.206
-
+skeletonize_flux0.05_upsampled2.0_downsampled_S500 82.607
 
 
 
@@ -109,8 +110,6 @@ frühere skelnets epochs hinzunehmen
 epoch 366 merged skelnet
 neuere epochs weighted ex + black skelnet
 
-thinned und skeletonize_flux kombinieren
-und skeletonize
 
 
 94.802_1043_skelnet_black_skel_test_normal_epoch150.png
