@@ -63,7 +63,7 @@ def main():
 
             print(len(points)/(256*256))
             # if image does not contain points: add some default points for default graph
-            if not points or len(points)/(256*256) > 0.1:
+            if not points or len(points) == 1 or len(points)/(256*256) > 0.1:
                 print(len(points)/(256*256))
                 points = []
                 points_list = []

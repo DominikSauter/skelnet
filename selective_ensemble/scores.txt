@@ -70,17 +70,18 @@ medial_axis_skeletons_upsampled2.0_thres_downsampled Failed
 thinned_skeletons_upsampled0.5_thres_downsampled 83.512
 skeletonize_upsampled0.5_thres_downsampled Failed
 
-medial_axis_skeletons_upsampled0.5_thres_downsampled 90.585 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+??????????????????????????
+medial_axis_skeletons_upsampled0.5_thres_downsampled 90.585 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ??????
 
 skeletonize_lee_upsampled2.0_thres_downsampled Failed
 (thinned_skeletons_upsampled0.5_thres 0.1 score)
 medial_axis_skeletons_upsampled2.0_downsampled 68.384
 
 
-skelnet_black_skel_test_black_epoch453
-skelnet_black_skel_test_normal_epoch453 83.910
-
-
+skelnet_black_skel_test_black_epoch453 70.426
+skelnet_black_skel_test_normal_epoch453 83.910 ??
+skelnet_weighted_ex_test_normal_epoch144 82.266 ??
 
 
 
