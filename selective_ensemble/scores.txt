@@ -72,7 +72,7 @@ skeletonize_upsampled0.5_thres_downsampled Failed
 
 
 ??????????????????????????
-medial_axis_skeletons_upsampled0.5_thres_downsampled 90.585 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ??????
+medial_axis_skeletons_upsampled0.5_thres_downsampled 84.843 / (90.585????)
 
 skeletonize_lee_upsampled2.0_thres_downsampled Failed
 (thinned_skeletons_upsampled0.5_thres 0.1 score)
