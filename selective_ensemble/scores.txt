@@ -82,25 +82,16 @@ medial_axis_skeletons_upsampled2.0_downsampled 68.384
 skelnet_black_skel_test_black_epoch453 70.426
 skelnet_black_skel_test_normal_epoch453 83.910 ??
 skelnet_weighted_ex_test_normal_epoch144 82.266 ??
+skeletonize_flux_upsampled2.0_downsampled 86.123
+
+merged_skelnetweightedextestnormalepoch67_thinnedskeletons 81.654
+merged_skeletonize_skeletonizeflux0.3 87.348
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+skelnet_black_skel_test_normal_epoch498_S500 88.258
+skelnet_black_skel_test_black_epoch498_S500 76.273
+skelnet_weighted_ex_test_normal_epoch173_thin_S500 91.206
 
 
 
