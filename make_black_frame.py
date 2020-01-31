@@ -5,8 +5,9 @@ from PIL import Image
 
 
 def main():
-    in_img_path = "dataset/point/test_ml_comp_grey"
-    out_img_path = "dataset/point/test_ml_comp_grey_framed"
+    in_img_path = "dataset/point/test_ml_comp_grey_upsampled2.0"
+    out_img_path = "dataset/point/test_ml_comp_grey_upsampled2.0_framed"
+    frame_size = 256 * 2
 
     shutil.rmtree(out_img_path, ignore_errors=True)
     os.makedirs(out_img_path, exist_ok=True)
@@ -16,7 +17,8 @@ def main():
         img = Image.open(os.path.join(in_img_path, img_path), 'r')
         img_immat = img.load()
         
-        for i in range(256):
+
+        for i in range(frame_size):
             img_immat[(i, 0)] = 0
             img_immat[(0, i)] = 0
             #img_immat[(i, 1)] = 255
@@ -24,8 +26,8 @@ def main():
             #img_immat[(i, 2)] = 255
             #img_immat[(2, i)] = 255
             
-            img_immat[(i, 255)] = 0
-            img_immat[(255, i)] = 0
+            img_immat[(i, frame_size-1)] = 0
+            img_immat[(frame_size-1, i)] = 0
             #img_immat[(i, 254)] = 255
             #img_immat[(254, i)] = 255
             #img_immat[(i, 253)] = 255

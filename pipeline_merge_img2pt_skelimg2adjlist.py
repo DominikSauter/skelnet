@@ -17,7 +17,7 @@ def main(preds, ds_path):
     print("Starting pipeline step 1/3 (possible merging)..")
     # if multiple prediction sets shall be merged
     if len(splitted_paths) > 1:
-        print("MERGING: " + str(splitted_paths.tostr))
+        print("MERGING: " + str(splitted_paths))
         # create dir paths, etc.
         out_merged_path = "merged"
         for p in splitted_paths:
