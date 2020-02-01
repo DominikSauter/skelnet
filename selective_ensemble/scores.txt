@@ -101,6 +101,8 @@ skeletonize_flux0.25_upsampled0.2_downsampled_S500 88.736
 
 
 
+test_ml_comp_labels_S500 97.502
+
 
 
 ########
