@@ -88,8 +88,7 @@ merged_skelnetweightedextestnormalepoch67_thinnedskeletons 81.654
 merged_skeletonize_skeletonizeflux0.3 87.348
 
 
-
-
+=== S500 (sampling mit 500 statt 100 bei der submission-Auswertung)
 skelnet_black_skel_test_normal_epoch498_S500 88.258
 skelnet_black_skel_test_black_epoch498_S500 76.273
 skelnet_weighted_ex_test_normal_epoch173_thin_S500 91.206
@@ -97,10 +96,9 @@ skeletonize_flux0.05_upsampled2.0_downsampled_S500 82.607
 merged_skelnetweightedextestnormalepoch173thinS500_skeletonizefluxupsampled2.0downsampled_S500 89.975
 skeletonize_flux0.3_upsampled2.0_downsampled_S500 84.032
 merged_skeletonize_skeletonizeflux0.2_S500 91.767
+skeletonize_flux0.075_upsampled2.0_downsampled_S500 85.863
+skeletonize_flux0.25_upsampled0.2_downsampled_S500 88.736
 
-
-skeletonize_flux0.075_upsampled2.0_downsampled --> submitten
-skeletonize_flux0.25_upsampled0.2_downsampled 88.736
 
 
 
