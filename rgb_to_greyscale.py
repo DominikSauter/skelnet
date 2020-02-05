@@ -2,8 +2,8 @@ import numpy as np
 from PIL import Image
 import os
 
-IN_IMAGES_PATH = "/home/DominikSauter/skelnet/dataset/point/test_ml_comp_rgb/"
-OUT_IMAGES_PATH = "/home/DominikSauter/skelnet/dataset/point/test_ml_comp_grey/"
+IN_IMAGES_PATH = "/home/DominikSauter/skelnet/dataset/point/test_gt_imgs/"
+OUT_IMAGES_PATH = "/home/DominikSauter/skelnet/dataset/point/test_gt_imgs_grey/"
 
 for image in os.listdir(IN_IMAGES_PATH):
     print(image)

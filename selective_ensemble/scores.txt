@@ -102,12 +102,18 @@ skeletonize_flux0.25_upsampled0.2_downsampled_S500 88.736
 
 
 test_ml_comp_labels_S500 97.502
+test_gt_imgs_grey_S500 97.500
 
 
 
 ########
 # TODO #
 ########
+
+
+- letzte weighted ex epoch checkpoint auswerten
+- letzte black skel epoch checkpoint auswerten
+
 
 #REDO 0.05er
 
